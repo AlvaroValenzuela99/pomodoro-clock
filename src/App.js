@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import BreakLength from './components/BreakLength';
+import SessionLength from './components/SessionLength';
+import TimeLeft from './components/TimeLeft';
+import Author from './components/Author';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="title">25 + 5 Clock</h1>
+      <div className="controls">
+        <BreakLength />
+        <SessionLength />
+      </div>
+      <TimeLeft />
+      <Author />
     </div>
   );
 }
