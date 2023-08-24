@@ -21,7 +21,8 @@ h1, h2, h3, h4, h5{
 }
 
 .title{
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    font-size: 50px;
 }
 
 .controls{
@@ -30,6 +31,7 @@ h1, h2, h3, h4, h5{
 }
 
 .control{
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,16 +39,28 @@ h1, h2, h3, h4, h5{
     font-size: 30px;
 }
 
+.control p{
+    margin: 0;
+}
+
+.session-timer{
+    border: 15px solid rgba(0, 0, 0, 0.363);
+    border-radius: 80px;
+    padding: 20px 60px;
+}
+
 .session-timer p{
-    font-size: 60px;
+    font-size: 90px;
     margin: 0; 
 }
 
 #timer-label{
+    margin-top: 20px;
     text-align: center;
 }
 
 .session-play{
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,4 +71,7 @@ h1, h2, h3, h4, h5{
 .author{
     margin-top: 40px;
     text-align: center;
+}
+i:hover{
+    cursor: pointer;
 }
