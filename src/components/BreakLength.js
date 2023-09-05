@@ -13,16 +13,19 @@ class BreakLength extends Component {
 
     decrementBreakLength(){
         if(this.state.breakLength > 0){
-            this.setState({
-                breakLength: this.state.breakLength - 1
-            })
+            this.setState(
+                { breakLength: this.state.breakLength - 1 },
+                () => this.props.onChange(this.state.breakLength)    
+            )
+            
         }
     }
     incrementBreakLength(){
         if(this.state.breakLength < 60){
-            this.setState({
-                breakLength: this.state.breakLength + 1
-            })
+            this.setState(
+               { breakLength: this.state.breakLength + 1 },
+               () => this.props.onChange(this.state.breakLength)
+            )
         }
     }
 

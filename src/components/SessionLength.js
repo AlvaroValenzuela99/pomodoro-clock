@@ -13,16 +13,18 @@ class SessionLength extends Component {
 
     decrementSessionLength(){
         if(this.state.sessionLength > 0){
-            this.setState({
-                sessionLength: this.state.sessionLength - 1
-            })
+            this.setState(
+                { sessionLength: this.state.sessionLength - 1 },
+                () => this.props.onChange(this.state.sessionLength)    
+            )
         }
     }
     incrementSessionLength(){
         if(this.state.sessionLength < 60){
-            this.setState({
-                sessionLength: this.state.sessionLength + 1
-            })
+            this.setState(
+                { sessionLength: this.state.sessionLength + 1 },
+                () => this.props.onChange(this.state.sessionLength)    
+            )
         }
     }
 
