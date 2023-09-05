@@ -104,7 +104,7 @@ class TimeLeft extends Component {
             <div id="timer-label">
                 <div className="session-timer">
                     <h2>{this.state.isBreak ? 'Break' : 'Session'}</h2>
-                    <p>{this.formatTime(this.state.timeRemaining)}</p>
+                    <p id="time-left">{this.formatTime(this.state.timeRemaining)}</p>
                 </div>
                 <div className="session-play">
                     <i className={`fa-solid ${
