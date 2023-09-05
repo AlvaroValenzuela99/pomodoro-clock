@@ -4,15 +4,26 @@ class SessionLength extends Component {
     constructor(props){
         super(props)
         this.state = {
-            sessionLength: 25
+            sessionLength: props.sessionLengthDefault
         }
 
         this.decrementSessionLength = this.decrementSessionLength.bind(this);
         this.incrementSessionLength = this.incrementSessionLength.bind(this);
     }
 
+    componentDidUpdate(prevProps) {
+        // Verificar si sessionLengthDefault ha cambiado
+        if (this.props.sessionLengthDefault !== prevProps.sessionLengthDefault) {
+            // Actualizar el estado local con el nuevo valor de sessionLengthDefault
+            this.setState({
+                sessionLength: this.props.sessionLengthDefault,
+            });
+        }
+    }
+
+
     decrementSessionLength(){
-        if(this.state.sessionLength > 0){
+        if(this.state.sessionLength > 1){
             this.setState(
                 { sessionLength: this.state.sessionLength - 1 },
                 () => this.props.onChange(this.state.sessionLength)    

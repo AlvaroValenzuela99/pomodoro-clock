@@ -4,15 +4,25 @@ class BreakLength extends Component {
     constructor(props){
         super(props);
         this.state = {
-            breakLength: 5
+            breakLength: props.breakLengthDefault
         }
 
         this.decrementBreakLength = this.decrementBreakLength.bind(this);
         this.incrementBreakLength = this.incrementBreakLength.bind(this);
     }
 
+    componentDidUpdate(prevProps) {
+        // Verificar si breakLengthDefault ha cambiado
+        if (this.props.breakLengthDefault !== prevProps.breakLengthDefault) {
+            // Actualizar el estado local con el nuevo valor de breakLengthDefault
+            this.setState({
+                breakLength: this.props.breakLengthDefault,
+            });
+        }
+    }
+
     decrementBreakLength(){
-        if(this.state.breakLength > 0){
+        if(this.state.breakLength > 1){
             this.setState(
                 { breakLength: this.state.breakLength - 1 },
                 () => this.props.onChange(this.state.breakLength)    

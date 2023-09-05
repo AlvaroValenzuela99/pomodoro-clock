@@ -20,15 +20,21 @@ function App() {
     setSessionLength(sessionLengthChild)
   }
 
+  //Resetear a valores por defecto
+  const resetDefaultValues = () => {
+    setBreakLength(5)
+    setSessionLength(25)
+  }
+
 
   return (
     <div className="App">
       <h1 className="title">25 + 5 Clock</h1>
       <div className="controls">
-        <BreakLength onChange = {handleBreakLengthChange}/>
-        <SessionLength onChange = {handleSessionLengthChange}/>
+        <BreakLength breakLengthDefault = {breakLength} onChange = {handleBreakLengthChange}/>
+        <SessionLength sessionLengthDefault = {sessionLength} onChange = {handleSessionLengthChange}/>
       </div>
-      <TimeLeft />
+      <TimeLeft breakLength = {breakLength} sessionLength = {sessionLength} resetDefaultValues = {resetDefaultValues}/>
       <Author />
     </div>
   );
